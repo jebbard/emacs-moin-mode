@@ -501,7 +501,7 @@ required order"
      ;; - They cannot span multiple lines
      ;; *******
      ;; Freehand absolute URL
- ("\\(http\\|https\\|ftp\\|nntp\\|news\\|mailto\\|telnet\\|wiki\\|file\\|irc\\)\\(://[A-Za-z0-9_-+&?%#:./=;$]+\\)"
+     ("\\(http\\|https\\|ftp\\|nntp\\|news\\|mailto\\|telnet\\|wiki\\|file\\|irc\\)\\(://[-A-Za-z0-9_+&?%#:./=;$]+\\)"
       (1 'moin-face-followable-link keep)
       (2 'moin-face-followable-link keep))
      ;; EMail
