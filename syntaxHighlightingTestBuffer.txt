@@ -150,6 +150,9 @@ multiple
 lines is not
 supported'''
 
+
+hhh '''''Bold and italic text''''' kk
+
 Test '''bold text at eol'''
 
 '''bold text at bol''' Test
@@ -162,12 +165,15 @@ Test '''bold ''inner italic Text'' text'''
 
 Test ''italic '''inner bold Text''' text''
 
-'''bold ''inner italic Text'' text''' Test
+'''bold ''inner bold and italic Text'' text''' Test
 
-''italic '''inner bold Text''' text'' Test
+''italic '''inner italic and bold Text''' text'' Test
 
 Test ''starting italic '''starting bold, ending italic'' ending bold'''
 
+Test '''first bold text''' in between text (non-bold) '''other text in bold'''
+
+Test ''first italics text'' in between text (non-italic) ''other text in italics''
 
 Stri--(kethrough '''overlapped by )-- bold'''
 
@@ -213,6 +219,10 @@ over multiple lines not highlighted}}
 
 Start of line:
 http://www.google.com zweiter Link: news://blaub.com|irc://myirc.de
+
+Link with all special characters:
+
+http://www.go_+&?%#:./=;$ogle.com
 
 Mid of line: https://huhz.com
 
@@ -268,8 +278,9 @@ A @variable@ here
 ;; - Formatting, Links, Wikiwords, Macros and Variables are highlighted in tables
 ;; *******
 
-||<rowbgcolor="#CCCCCC"> no formatting ||<|4> Hallo ''italic'' huhu	  ||
+||<rowbgcolor="#CCCCCC"> no formatting ||<|4> Hallo '''bold''' and ''italic'' ||
 || no formatting || '''bold'''	  ||
+|| no formatting || ''italic''	  ||
 || no formatting || `monospace` ||
 || no formatting ||  monospace ||
 || no formatting || __underline__ ||

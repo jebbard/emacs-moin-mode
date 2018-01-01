@@ -147,6 +147,9 @@ of tables, set to nil otherwise. Default is t"
 (defface moin-face-italic '((t (:slant italic)))
   "Face to use for italic text in moinmoin"
   :group 'moin-faces)
+(defface moin-face-italic-bold '((t (:slant italic :weight bold)))
+  "Face to use for italic and bold text in moinmoin"
+  :group 'moin-faces)
 (defface moin-face-underline '((t (:underline t)))
   "Face to use for underlined text in moinmoin"
   :group 'moin-faces)
@@ -442,16 +445,21 @@ required order"
      ;; - Known issue: Subscripts and superscripts are always highlighted, even in
      ;;   headings and environments
      ;; *******
-     ;; Bold in italic
-     ("\\(''.*?\\)\\('''.*?'''\\)\\(.*?''\\)"
-      (1 'moin-face-italic keep)
-      (2 'moin-face-bold keep)
-      (3 'moin-face-italic keep))
-     ;; Italic in bold
-     ("\\('''.*?\\)\\(''.*?''\\)\\(.*?'''\\)"
-      (1 'moin-face-bold keep)
-      (2 'moin-face-italic keep)
-      (3 'moin-face-bold keep))
+     ;; Bold + italic
+     ("\\('''''\\)\\(.*?\\)\\('''''\\)"
+      (1 'moin-face-italic-bold keep)
+      (2 'moin-face-italic-bold keep)
+      (3 'moin-face-italic-bold keep))
+     ;; Italic in bold (does not work as epxected)
+   ;  ("\\('''.*?\\)\\(''.*?''\\)\\(.*?'''\\)"
+   ;   (1 'moin-face-bold keep)
+   ;   (2 'moin-face-italic-bold keep)
+   ;   (3 'moin-face-bold keep))
+     ;; Bold in italic (does not work as epxected)
+   ;  ("\\(''[^']*?\\)\\('''.*?'''\\)\\([^']*?''\\)"
+   ;   (1 'moin-face-italic keep)
+   ;   (2 'moin-face-italic-bold keep)
+   ;   (3 'moin-face-italic keep))
      ;; Bold
      ("\\('''.*?'''\\)"
       (1 'moin-face-bold keep))
