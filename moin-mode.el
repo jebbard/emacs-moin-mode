@@ -144,11 +144,12 @@
 ;; ==================================================
 ;; Global customization options
 
-(defcustom moin-double-line-break-p t
+(defcustom moin-double-line-break-p nil
   "Set to t to enable that whenever you hit enter outside of tables,
 two instead of just one line break is added. This ensures that you
 have a real MoinMoin line break, because MoinMoin interpretes a single
-newline as space and not as line break."
+newline as space and not as line break. As this might get confusing
+compared to usual text editing, this is disabled by default."
   :group 'moin)
 
 ;; See also individual other modules and docs for other
