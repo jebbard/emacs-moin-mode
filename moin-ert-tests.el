@@ -1723,9 +1723,12 @@ have a subtree, the behavior for both commands must be the same."
   (check-func-at-point command
 		       "TextBefore\n * My item\n * Yours\n   \n \n \n\t\n   \nText behind" 30 31 "TextBefore\n * My item\n  * Yours\n    \n  \n  \n \t\n    \nText behind")
     ;; Indent items after previous higher level items
-  (check-func-at-point 'moin-command-meta-shift-right
+  (check-func-at-point command
   		       " * My item \n   * Subitem 1\n   * Subitem 2\n     * Subitem 2.1\n * Yours" 70 71
-  		       " * My item \n   * Subitem 1\n   * Subitem 2\n     * Subitem 2.1\n  * Yours"))
+  		       " * My item \n   * Subitem 1\n   * Subitem 2\n     * Subitem 2.1\n  * Yours")
+  (check-func-at-point command
+  		       " * My item \n \t* Subitem 1\n * Subitem 2" 33 34
+  		       " * My item \n \t* Subitem 1\n  * Subitem 2"))
 
 
 (defun test--moin-list-indentation-error (command)
@@ -1804,8 +1807,8 @@ have a subtree, the behavior for both commands must be the same."
   		       " * My item \n   * Subitem 1\n   * Subitem 2\n     * Subitem 2.1\n  * Yours" 71 70
   		       " * My item \n   * Subitem 1\n   * Subitem 2\n     * Subitem 2.1\n * Yours")
   (check-func-at-point command
-  		       " * My item \n \t* Subitem 1" 17 16
-  		       " * My item \n * Subitem 1"))
+   		       " * My item \n \t* Subitem 1" 17 16
+   		       " * My item \n\t* Subitem 1"))
 
 
 (defun test--moin-list-outdentation-error (command)
