@@ -6,7 +6,7 @@
 ;; Maintainer: Jens Ebert <jensebert@gmx.net>
 ;; Created: 20 Jan 2017
 ;; Keywords: wiki editing
-;; Version: 0.8
+;; Version: 1.0
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -123,6 +123,8 @@
 ;; v0.9    2017-07-02  Jens Ebert            <jensebert@gmx.net>
 ;; - Cleaned all flycheck warnings (except unnecessary documentation warnings)
 ;; - Cleaned all elint warnings
+;; v1.0    2018-02-17  Jens Ebert            <jensebert@gmx.net>
+;; - Final bug fixes and documentation
 
 ;;; Code:
 ;; ==================================================
