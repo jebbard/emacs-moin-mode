@@ -7,7 +7,12 @@ I recommend to use [Yasnippet](https://github.com/joaotavora/yasnippet) snippets
 
 ## Install and Enable 
 
-TODO
+Easy installation using Melpa is still in progress. For now, download all .el and put them into a suitable folder. Ensure Emacs knows the moin-mode module by adding the following to your init.el or .emacs file:
+```elisp
+(add-to-list 'load-path "/path/to/moin-mode-dir/")
+(require 'moin-mode)
+```
+Enable moin-mode in a buffer by typing `M-x moin-mode`.
 
 ## Features
 
@@ -62,7 +67,7 @@ The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was neces
   * `M-<right>` - `moin-command-meta-right` - If point is currently on a heading line, it demotes the current heading, leaving its children unchanged, but only if the current heading is not already on level 5. This command does not work with an active mark, which will lead to an error being thrown. It also fixes errors in the end marker of the heading, if necessary.
   * `M-S-<right>` - `moin-command-meta-shift-right` - If point is currently on a heading line, it demotes the current subtree (i.e. the current heading and all its children), if the current heading is not already on level 5. This command does not work with an active region, which will lead to an error being thrown. It also fixes errors in the end marker of the heading, if necessary.
   * `M-<up>`, `M-S-<up>` - `moin-command-meta-up`, `moin-command-meta-shift-up` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-up`: It moves the subtree of the current heading to the point before the previous heading of the same level, if any. If there is no such heading, it throws an error.
-  * `M-<down>`, `M-S-<down>` - `moin-command-meta-down`, `moin-command-meta-shift-down` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-down`: It moves the subtree of the current heading to the point after the next heading of the same level, if any. If there is no such heading, it throws an error.
+  * `M-<down>`, `M-S-<down>` - `moin-command-meta-down`, `moin-command-meta-shift-down` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-down`: It moves the subtree of the current heading to the point after the subtree of the next heading of the same level, if any. If there is no such heading, it throws an error.
 
 ### Lists
 ### Tables

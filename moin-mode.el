@@ -293,8 +293,9 @@ on the context:
 on the context:
  * If point is currently on a heading, it basically does the same
    thing as `outline-move-subtree-down': It moves the subtree of the
-   current heading to the point after the next heading of the same
-   level, if any. If there is no such heading, it throws an error.
+   current heading to the point after the subtree of the next heading
+   of the same level, if any. If there is no such heading, it throws
+   an error.
  * If point is currently in a table, it creates a new row before the
    current row of the table. Positions point within the first field of
    the new row.
