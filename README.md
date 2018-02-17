@@ -70,9 +70,20 @@ The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was neces
   * `M-<down>`, `M-S-<down>` - `moin-command-meta-down`, `moin-command-meta-shift-down` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-down`: It moves the subtree of the current heading to the point after the subtree of the next heading of the same level, if any. If there is no such heading, it throws an error.
 
 ### Lists
+
+TODO
+
 ### Tables
 
+TODO
+
 ## Known Issues
+
+The following issues are currently known, whereas I hope they should only rarely be of bigger annoyance:
+  * Syntax highlighting for nested formattings (bold inside underline etc.) will most probably not or not reliably work. If someone knows how to formulate corresponding regex patterns to handle all possible cases (without writing a finder function), your advice would be very welcome :-)
+  * Furthermore, formatting syntax highlighting will end at line end. Note that MoinMoin does not interpret a single line break as an actual line break. Using bold formatting crossing such a "fake" newline will not detect the bold text, because it scans for the end delimiter only up to the next line break
+  * Trying to move around table columns or rows within tables that have merged cells (i.e. colspans or rowspans) will most probably lead to errors
+
 ## Planned Features
 
 The following features sound like worthy additions:
@@ -82,4 +93,4 @@ The following features sound like worthy additions:
 
 ## Bug Reports
 
-Please create a bug in the [GitHub bug tracker](https://github.com/jebbard/emacs-moin-mode/issues).
+Please check first if the issue might already be a [known issue](#kown-issues). Please create a bug in the [GitHub bug tracker](https://github.com/jebbard/emacs-moin-mode/issues).
