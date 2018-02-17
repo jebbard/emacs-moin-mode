@@ -32,9 +32,7 @@ You can see all syntax highlighting faces in action in  [syntaxHighlightingTestB
 
 The Emacs Moin mode allows you to set the common formattings by using the following key-bindings
 
-| **Key** | **Function** | **Description** |
-| `C-c C-f C-b` | moin-command-format-bold | Insert MoinMoin bold formatting (six ') at point, or, if mark is active, three ' surrounding the highlighted text |
- 
+  * `C-c C-f C-b` `moin-command-format-bold`: Insert MoinMoin bold formatting (six ') at point, or, if mark is active, three ' surrounding the highlighted text
 
 ### Headings
 ### Lists
