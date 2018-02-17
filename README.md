@@ -87,7 +87,7 @@ The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was neces
 ### Tables
 
 **Creating tables:**
-  * `C-|` - `moin-command-create-table` - Creates a new moin-style table with the given number of rows and columns. If point is at beginning of line, the table is created before the current line, and a newline is inserted between table and text. If point is not at the beginning of line, the table is created after the current line, and a newline is inserted between text and table.
+  * `C-c |` - `moin-command-create-table` - Creates a new moin-style table with the given number of rows and columns. If point is at beginning of line, the table is created before the current line, and a newline is inserted between table and text. If point is not at the beginning of line, the table is created after the current line, and a newline is inserted between text and table.
 
 **Moving:**
   * `TAB` - `moin-command-tab` - If point is currently in a table, it moves to the next table field to the right, or to the first field of the next row, if the current field is in the last column of the table. If the current field is the last field of the table in the right-most column, this command will create a new empty row and put point into the left-most field of the new row. If the next field already constains text, this command positions point just before the first non-whitespace character of the field. After moving to the next field - for both the current as well as the next field - this command ensures that there is just exactly one blank after the previous and before the next column separator.
