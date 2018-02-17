@@ -86,7 +86,29 @@ The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was neces
 
 ### Tables
 
-TODO
+**Creating tables:**
+  * `C-|` - `moin-command-create-table` - Creates a new moin-style table with the given number of rows and columns. If point is at beginning of line, the table is created before the current line, and a newline is inserted between table and text. If point is not at the beginning of line, the table is created after the current line, and a newline is inserted between text and table.
+
+**Moving:**
+  * `TAB` - `moin-command-tab` - If point is currently in a table, it moves to the next table field to the right, or to the first field of the next row, if the current field is in the last column of the table. If the current field is the last field of the table in the right-most column, this command will create a new empty row and put point into the left-most field of the new row. If the next field already constains text, this command positions point just before the first non-whitespace character of the field. After moving to the next field - for both the current as well as the next field - this command ensures that there is just exactly one blank after the previous and before the next column separator.
+  * `S-TAB` - `moin-command-table-previous-field` - When in a table, moves to the previous field, if any. The previous field is the field to the left of the current one, or in case that the current field is in the left-most column, the last field of the previous row. In contrast to `moin-command-tab` in tables, it will not prepend a new row in case point is currently in the very first field of the table. If the previous field already contains text, this command positions point just before the first non-whitespace character of the field. After moving to the previous field - for both the current as well as the previous field - this command ensures that there is just exactly one blank after the previous and before the next column separator.
+  
+**Duplicating and splitting cells:**
+  * `<return>` - `moin-command-return` - When in a table, moves to the next row. If there is no next row, this command creates a new row. For both the current as well as the field below where this command moves to, it ensures that - after moving to the next field - there is just exactly one blank after the previous and before the next column separator. On the end or start of a line, it still does a line break and thus can be used to split a table.
+  * `S-<return>` - `moin-command-table-copy-down` - When in a table, moves to the next row and copies the content of the current field down. If the next row already contains text in the -field below, this text is replaced by the copied text. If there is no next row, this command creates a new row. For the current field, it ensures that - after moving to the next field - there is just one blank after the previous and before the next column separator. On the end or start of a line, this command throws an error.
+  * `M-<return>` - `moin-command-meta-return` - If point is currently in a table, it moves to the next row, splitting the content of the current field in two parts starting at point, if point is currently in the middle of the field. If there is a next row, and the field in the next row already contains text, this text is prepended by the text split from the current row's field. If there is no next row, this command creates a new row. For the current as well as the target field, it ensures that - after moving to the next field - there is just exactly one blank after the previous and before the next column separator. Issued at the end or start of a line, this command throws an error. In contrast to org mode, selection or prefix arguments are not considered, there is no specific functionality for this.
+
+**Reorganizing table columns:**
+  * `M-<left>` - `moin-command-meta-left` - If point is currently in a table, it moves the current column of the table to the left, but only if it is not already the left-most column. After movement, point is set to be at the start of the column directly behind the column delimiter.
+  * `M-S-<left>` - `moin-command-meta-shift-left` - If point is currently in a table, it removes the current column of the table. Point is placed at the beginning of the next column, if any. If there is no next column, it is placed at the beginning of the previous column, if any.
+  * `M-<right>` - `moin-command-meta-right` - If point is currently in a table, it moves the current column of the table to the right, but only if it is not already the right-most column.
+  * `M-S-<right>` - `moin-command-meta-shift-right` - If point is currently in a table, it inserts a new empty column to the left of the current column. Point is placed within the same row and the beginning of the new column.
+
+**Reorganizing table rows:**
+  * `M-<up>` - `moin-command-meta-up` - If point is currently in a table, it moves the current row up (swapping with previous row), if it is not already the first row in the table.
+  * `M-S-<up>` - `moin-command-meta-shift-up` - If point is currently in a table, it removes the current row of the table.
+  * `M-<down>` - `moin-command-meta-down` - If point is currently in a table, it moves the current row down (swapping with next row), if it is not already the last row in the table.
+  * `M-S-<down>` - `moin-command-meta-shift-down` - If point is currently in a list, it moves the current item with its subtree down (swapping with next item), if it is not already the last item below its parent item.
 
 ## Known Issues
 
