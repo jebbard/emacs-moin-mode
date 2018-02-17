@@ -588,8 +588,8 @@ of the first item in the new list. If point is at the beginning of
 line, it turns the current line into a list item. If currently already
 in a list, this has a similar effect as using
 `moin-command-meta-return' to insert a new list item, with two major
-differences: First, the new item will be inserted as top - level item,
-and second it will not respect the type of the previous top - level
+differences: First, the new item will be inserted as top-level item,
+and second it will not respect the type of the previous top-level
 item, but always inserts a bullet-point item. Thus, you should use
 this command really only to create a new list, and if you are already
 in a list, use `moin-command-meta-return' instead."
@@ -606,8 +606,8 @@ of the first item in the new list. If point is at the beginning of
 line, it turns the current line into a list item. If currently already
 in a list, this has a similar effect as using
 `moin-command-meta-return' to insert a new list item, with two major
-differences: First, the new item will be inserted as top - level item,
-and second it will not respect the type of the previous top - level
+differences: First, the new item will be inserted as top-level item,
+and second it will not respect the type of the previous top-level
 item, but always inserts a numbered item. Thus, you should use this
 command really only to create a new list, and if you are already in a
 list, use `moin-command-meta-return' instead."
