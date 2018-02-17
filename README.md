@@ -32,9 +32,23 @@ You can see all syntax highlighting faces in action in  [syntaxHighlightingTestB
 
 The Emacs Moin mode allows you to set the common formattings by using the following key-bindings
 
-  * `C-c C-f C-b` `moin-command-format-bold`: Insert MoinMoin bold formatting (six ') at point, or, if mark is active, three ' surrounding the highlighted text
+  * `C-c C-f C-b` - `moin-command-format-bold` - Insert MoinMoin bold formatting (six ') at point and places point in the middle, or, if mark is active, three ' surrounding the currently selected text
+  * `C-c C-f C-i`, `C-c C-f C-e` - `moin-command-format-italic` - Insert MoinMoin italic formatting (four ') at point and places point in the middle, or, if mark is active, two ' surrounding the currently selected text
+  * `C-c C-f C-u` - `moin-command-format-underline` - Insert MoinMoin underline formatting (two _) at point and places point in the middle, or, if mark is active, one _ surrounding the currently selected text
 
 ### Headings
+
+The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was necessary to make it work with MoinMoin's enclosing "=" markups, and it adds an outline cycle feature.
+
+**Navigation between headings:**
+  * TODO
+
+**Changing the document outline:**
+  * TODO
+
+**Outline Cycle:** As you might be used to in Org mode, pressing `TAB` if point is on a heading cycles the content belonging to this heading through the following states:
+  * 
+
 ### Lists
 ### Tables
 
