@@ -201,7 +201,14 @@ compared to usual text editing, this is disabled by default."
   (define-key moin-mode-map (kbd "C-c C-f C-b") 'moin-command-format-bold)
   (define-key moin-mode-map (kbd "C-c C-f C-i") 'moin-command-format-italic)
   (define-key moin-mode-map (kbd "C-c C-f C-e") 'moin-command-format-italic)
-  (define-key moin-mode-map (kbd "C-c C-f C-u") 'moin-command-format-underline))
+  (define-key moin-mode-map (kbd "C-c C-f C-u") 'moin-command-format-underline)
+
+  ;; Inherited outline commands
+  (define-key moin-mode-map (kbd "C-c C-x C-n") 'outline-next-visible-heading)
+  (define-key moin-mode-map (kbd "C-c C-x C-p") 'outline-previous-visible-heading)
+  (define-key moin-mode-map (kbd "C-c C-x C-f") 'outline-forward-same-level)
+  (define-key moin-mode-map (kbd "C-c C-x C-b") 'outline-backward-same-level)
+  (define-key moin-mode-map (kbd "C-c C-x C-u") 'outline-up-heading))
 
 
 ;; ==================================================
@@ -402,7 +409,7 @@ on the context:
 (defun moin-command-meta-left ()
   "Context-sensitive command that performs different functions based
 on the context:
- * If point is currently on a heading, it demotes the current heading,
+ * If point is currently on a heading, it promotes the current heading,
    leaving its children unchanged, but only if the current heading is
    not already on level 1. This command does not work with an active
    mark, which will lead to an error being thrown. It also fixes
@@ -433,7 +440,7 @@ on the context:
 (defun moin-command-meta-right ()
   "Context-sensitive command that performs different functions based
 on the context:
- * If point is currently on a heading, it promotes the current
+ * If point is currently on a heading, it demotes the current
    heading, leaving its children unchanged, but only if the current
    heading is not already on level 5. This command does not work with
    an active mark, which will lead to an error being thrown. It also

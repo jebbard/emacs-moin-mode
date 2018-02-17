@@ -1,4 +1,4 @@
-# emacs-moin-mode
+# Emacs Moin mode
 A major mode for Emacs to support editing [MoinMoin](https://moinmo.in/) wiki pages. The main design premise was to create a similar editing experience as the Emacs Org mode does.
 
 This major mode is meant to be used with MoinMoin 1.9.x markup. It was tested with Emacs 24.4, 24.5 and 25.3 under Windows 7, Windows 10 and Ubuntu 16.04.
@@ -40,14 +40,29 @@ The Emacs Moin mode allows you to set the common formattings by using the follow
 
 The Emacs Moin mode is based on Emacs outline-mode, but extra tweaking was necessary to make it work with MoinMoin's enclosing "=" markups, and it adds an outline cycle feature.
 
-**Navigation between headings:**
-  * TODO
-
-**Changing the document outline:**
-  * TODO
+**Navigate between headings:** (inherited from outline-mode, but mapped to slightly different keys)
+  * `C-c C-x C-n` - `outline-next-visible-heading` - Move to the next visible heading
+  * `C-c C-x C-p` - `outline-previous-visible-heading` - Move to the previous visible heading
+  * `C-c C-x C-f` - `outline-forward-same-level` - Move fo the next visible heading on the same level
+  * `C-c C-x C-b` - `outline-backward-same-level` - Move fo the previous visible heading on the same level
+  * `C-c C-x C-u` - `outline-up-heading` - Move to the next higher level heading
 
 **Outline Cycle:** As you might be used to in Org mode, pressing `TAB` if point is on a heading cycles the content belonging to this heading through the following states:
-  * 
+  * `FOLDED`: Hides the entire subtree and content of the current heading
+  * `CHILDREN`: Shows the content of the current heading and all direct child headings of the next lower level below the current heading. The child heading subtrees remain hidden.
+  * `SUBTREE`: The entire content and subtree below the current heading is shown entirely, no folding.
+
+**Create new headings:**
+  * `M-<return>` - `moin-command-meta-return` - If point is outside of a list and outside of a table, this command inserts a new heading on the next line, splitting any content at point. The new heading has the same level as the previous heading, or level 1, if there is no previous heading.
+  * `C-<return>` - `moin-command-insert-heading-respect-content` - This inserts a new heading just before the next heading (or end of document, respectively) on the same level as the previous heading or level 1, if there is no previous heading.
+
+**Change the document's outline:**
+  * `M-<left>` - `moin-command-meta-left` - If point is currently on a heading line, it promotes the current heading, leaving its children unchanged, but only if the current heading is not already on level 1. This command does not work with an active mark, which will lead to an error being thrown. It also fixes   errors in the end marker of the heading, if necessary.
+  * `M-S-<left>` - `moin-command-meta-shift-left` - If point is currently on a heading line, it promotes the current subtree (i.e. the current heading and all its children), if the current heading is not already on level 1. This command does not work with an active region, which will lead to an error being thrown. It also fixes errors in the end marker of the heading, if necessary.
+  * `M-<right>` - `moin-command-meta-right` - If point is currently on a heading line, it demotes the current heading, leaving its children unchanged, but only if the current heading is not already on level 5. This command does not work with an active mark, which will lead to an error being thrown. It also fixes errors in the end marker of the heading, if necessary.
+  * `M-S-<right>` - `moin-command-meta-shift-right` - If point is currently on a heading line, it demotes the current subtree (i.e. the current heading and all its children), if the current heading is not already on level 5. This command does not work with an active region, which will lead to an error being thrown. It also fixes errors in the end marker of the heading, if necessary.
+  * `M-<up>`, `M-S-<up>` - `moin-command-meta-up`, `moin-command-meta-shift-up` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-up`: It moves the subtree of the current heading to the point before the previous heading of the same level, if any. If there is no such heading, it throws an error.
+  * `M-<down>`, `M-S-<down>` - `moin-command-meta-down`, `moin-command-meta-shift-down` - If point is currently on a heading line, it basically does the same thing as `outline-move-subtree-down`: It moves the subtree of the current heading to the point after the previous heading of the same level, if any. If there is no such heading, it throws an error.
 
 ### Lists
 ### Tables
