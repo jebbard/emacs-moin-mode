@@ -120,10 +120,16 @@ The following issues are currently known, whereas I hope they should only rarely
 ## Planned Features
 
 The following features sound like worthy additions:
-  * Support for colspan and rowspan tables
+  * Function for adding a link easily
   * Index of local headings to use for hyperlinking
+  * Headings: Promoting, demoting and moving multiple selected headings; create headings from selected lines
+  * Lists: Promoting, demoting and moving multiple selected list items; creating lists from selected lines; convert lists to headings; cycle through bullet types
+  * Tables: Create new table from comma or blank separated text; copy whole row or column
+  * Support for colspan and rowspan tables
   * Tackling some other of the known issues
 
 ## Bug Reports
 
 Please check first if the issue might already be a [known issue](#kown-issues). Please create a bug in the [GitHub bug tracker](https://github.com/jebbard/emacs-moin-mode/issues).
+
+Please also read [CONTRIBUTING.MD](CONTRIBUTING.MD) for notes on how to contribute.
