@@ -12,11 +12,11 @@ TODO
 ## Features
 
 Here is what the Emacs Moin mode can do for you:
-  * [Syntax highlighting](#Syntax Highlighting)
-  * [Formatting support](#Formatting)
-  * [Support for headings and outline editing](#Headings)
-  * [Support for list editing](#Lists)
-  * [Support for table editing](#Tables)
+  * [Syntax highlighting](#syntax-highlighting)
+  * [Formatting support](#formatting)
+  * [Support for headings and outline editing](#headings)
+  * [Support for list editing](#lists)
+  * [Support for table editing](#lables)
 
 ### Syntax Highlighting
 
