@@ -3,7 +3,7 @@ A major mode for Emacs to support editing [MoinMoin](https://moinmo.in/) wiki pa
 
 This major mode is meant to be used with MoinMoin 1.9.x markup. It was tested with Emacs 24.4, 24.5 and 25.3 under Windows 7, Windows 10 and Ubuntu 16.04.
 
-I recommend to use [Yasnippet](https://github.com/joaotavora/yasnippet) snippets and [It's all text](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) for firefox users to further enhance the editing experience of MoinMoin wiki pages.
+I recommend to use [Yasnippet](https://github.com/joaotavora/yasnippet) snippets and [It's all text](https://addons.mozilla.org/en-US/firefox/addon/its-all-text/) for Firefox users to further enhance the editing experience of MoinMoin wiki pages.
 
 ## Install and Enable 
 
@@ -29,7 +29,7 @@ The Emacs Moin mode highlights the usual MoinMoin wiki markup constructs such as
 
 Here is an example screenshot:
 
-TODO Screenshot
+[demo/demo.png]
 
 You can see all syntax highlighting faces in action in  [syntaxHighlightingTestBuffer.txt](syntaxHighlightingTestBuffer.txt).
 

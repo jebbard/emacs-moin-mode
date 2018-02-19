@@ -1,0 +1,47 @@
+= Emacs Moin mode =
+
+<<TableOfContents(5)>>
+
+A major mode for Emacs to support editing [[MoinMoin|https://moinmo.in/]] wiki pages. The main design premise was to create a similar editing experience as the Emacs Org mode does.
+
+This major mode is meant to be used with !MoinMoin 1.9.x markup. It was tested with Emacs 24.4, 24.5 and 25.3 under Windows 7, Windows 10 and Ubuntu 16.04.
+
+I recommend to use [[Yasnippet|https://github.com/joaotavora/yasnippet]] snippets and [[It's all|https://addons.mozilla.org/en-US/firefox/addon/its-all-text/]] text for Firefox users to further enhance the editing experience of !MoinMoin wiki pages.
+
+== Install and Enable ==
+
+Easy installation using Melpa is still in progress. For now, download all .el and put them into a suitable folder. Ensure Emacs knows the moin-mode module by adding the following to your init.el or .emacs file:
+
+{{{#!highlight elisp
+(add-to-list 'load-path "/path/to/moin-mode-dir/")
+(require 'moin-mode)
+}}}
+
+Enable moin-mode in a buffer by typing {{{M-x moin-mode}}}.
+
+== Features ==
+
+Here is what the Emacs Moin mode can do for you:
+|| '''Topic''' || '''Link''' ||
+|| Syntax highlighting || [[Here|#Syntax highlighting]] ||
+|| Formatting support || [[Here|#Formatting support]] ||
+|| Support for headings and outline editing || [[Here|#Support for headings and outline editing]] ||
+|| Support for list editing || [[Here|#Support for list editing]] ||
+|| Support for table editing || [[Here|#Support for table editing]] ||
+
+=== Syntax highlighting ===
+
+The Emacs Moin mode highlights the usual !MoinMoin wiki markup constructs such as headings, tables, lists, links, text formatting etc. The faces used are mostly the same as for the Org mode. Of course you can customize all the faces. The face definitions start with "moin-face-". All of them are defined in [[moin-faces.el]].
+
+Here is an example screenshot:
+
+{{attachment:demo.png}}
+
+=== Formatting support ===
+
+...
+
+=== Support for headings and outline editing ===
+=== Support for list editing ===
+=== Support for table editing ===
+
