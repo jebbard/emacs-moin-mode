@@ -27,7 +27,7 @@ Here is what the Emacs Moin mode can do for you:
 
 The Emacs Moin mode highlights the usual MoinMoin wiki markup constructs such as headings, tables, lists, links, text formatting etc. The faces used are mostly the same as for the Org mode. Of course you can customize all the faces. The face definitions start with "moin-face-". All of them are defined in [moin-faces.el](moin-faces.el).
 
-Here is an example screenshot:
+Here is an example screenshot (left: moin-mode syntax highlighting, right: how it looks like in MoinMoin):
 
 ![Demo Screenshot of moin-mode (left) plus resulting MoinMoin page (right)](demo/demo.png)
 
