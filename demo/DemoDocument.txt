@@ -6,7 +6,7 @@ A major mode for Emacs to support editing [[MoinMoin|https://moinmo.in/]] wiki p
 
 This major mode is meant to be used with !MoinMoin 1.9.x markup. It was tested with Emacs 24.4, 24.5 and 25.3 under Windows 7, Windows 10 and Ubuntu 16.04.
 
-I recommend to use [[Yasnippet|https://github.com/joaotavora/yasnippet]] snippets and [[It's all|https://addons.mozilla.org/en-US/firefox/addon/its-all-text/]] text for Firefox users to further enhance the editing experience of !MoinMoin wiki pages.
+I recommend to use [[Yasnippet|https://github.com/joaotavora/yasnippet]] snippets and [[It's all text|https://addons.mozilla.org/en-US/firefox/addon/its-all-text/]] for Firefox users to further enhance the editing experience of !MoinMoin wiki pages.
 
 == Install and Enable ==
 
