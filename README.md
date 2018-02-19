@@ -29,7 +29,7 @@ The Emacs Moin mode highlights the usual MoinMoin wiki markup constructs such as
 
 Here is an example screenshot:
 
-[demo/demo.png]
+![Demo Screenshot of moin-mode (left) plus resulting MoinMoin page (right)](demo/demo.png)
 
 You can see all syntax highlighting faces in action in  [syntaxHighlightingTestBuffer.txt](syntaxHighlightingTestBuffer.txt).
 
